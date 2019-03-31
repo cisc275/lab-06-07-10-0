@@ -26,6 +26,8 @@ public class Model{
     boolean east = true;
     boolean south;
     boolean stop = false;
+    boolean jump = false;
+    boolean fire = false;
 	
     // Model constructor
 	public Model(int width, int height, int imgWidth, int imgHeight) {
@@ -35,8 +37,14 @@ public class Model{
 		this.imgHeight = imgHeight;
 	}
 	
+	// set stop flag
 	public void stop() {
 		stop = true;
+	}
+	
+	// update fire flag
+	public void fire() {
+		fire = !fire;
 	}
 	
 	// Update the location and direction of the orc for the view class
@@ -113,5 +121,9 @@ public class Model{
 	
 	public void setStop() {
 		stop = !stop;
+	}
+	
+	public boolean getFire() {
+		return fire;
 	}
 }
